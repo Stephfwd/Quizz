@@ -1,0 +1,48 @@
+.home-container {
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.home-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.home-title {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.home-menu .menu-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.menu-link:hover {
+    color: #00d2ff;
+}
