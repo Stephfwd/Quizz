@@ -1,4 +1,5 @@
 import React from 'react';
+import ServicioPrendas from  '../services/ServicioPrendas';
 import '../styles/ClothingCard.css';
 
 const ClothingCard = ({ image, title, price, isAddCard, onAdd }) => {

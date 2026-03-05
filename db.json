@@ -1,5 +1,18 @@
 {
-    "prendas": []
-       
-           
+  "usuarios": [
+    {
+      "id": "2e9b",
+      "nombre": "Stephannie Suarez",
+      "correo": "ssuarezguido@gmail.com",
+      "contraseña": "123456789"
+    }
+  ],
+  "prendas": [
+    {
+      "title": "Gorra Mercedes F1 Antonelli",
+      "precio": "$5.00",
+      "imagen": "https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/711452_v2.jpg",
+      "id": "1b3a"
+    }
+  ]
 }
