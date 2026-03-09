@@ -1,0 +1,127 @@
+.navbar {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.navbar-logo span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-item {
+  height: 80px;
+}
+
+.nav-links {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+.nav-links:hover {
+  color: var(--text-main);
+}
+
+.btn-login {
+  background: var(--accent-gradient);
+  color: white !important;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem !important;
+  margin-left: 1rem;
+  height: auto !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-logout {
+  background: #000000;
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem !important;
+  margin-left: 1rem;
+  height: auto !important;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #222222;
+  transform: translateY(-2px);
+}
+
+.cart-icon-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.cart-icon-container:hover {
+  transform: scale(1.1);
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: #ff4757;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 50%;
+  border: 2px solid #1e293b;
+  min-width: 18px;
+  text-align: center;
+}

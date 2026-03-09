@@ -1,18 +1,155 @@
 {
   "usuarios": [
     {
-      "id": "2e9b",
-      "nombre": "Stephannie Suarez",
+      "id": "admin-1",
+      "nombre": "Administrador",
+      "correo": "admin@quizz.com",
+      "contraseña": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "9c7e",
+      "nombre": "salas",
+      "correo": "salas@gamil.com",
+      "contraseña": "12345678",
+      "role": "user"
+    },
+    {
+      "id": "7e06",
+      "nombre": "Samy",
       "correo": "ssuarezguido@gmail.com",
-      "contraseña": "123456789"
+      "contraseña": "123456789",
+      "role": "user"
     }
   ],
   "prendas": [
     {
-      "title": "Gorra Mercedes F1 Antonelli",
-      "precio": "$5.00",
-      "imagen": "https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/711452_v2.jpg",
-      "id": "1b3a"
+      "id": "b17f",
+      "title": "Tenis Mercedes Amg",
+      "precio": "$67.00",
+      "imagen": "https://klasssport.com.mx/data/images/products/97/1669398539-D_NQ_NP_980234-MLM49193055487_022022-W.jpg",
+      "stock": 87,
+      "detalle": "Tenis color negro con turqueza y blanco, 65% algodon."
+    },
+    {
+      "id": "20f2",
+      "title": "Carro Mercedes AmgF1",
+      "precio": "$40.00",
+      "imagen": "https://walmartcr.vtexassets.com/arquivos/ids/1004546/vehiculo-formula-1-mercedes-racing-1-43-4893993380800.jpg?v=638949249778070000",
+      "stock": 95,
+      "detalle": "Carro Mecedes F1 , hecho con pieza de plástico y llentas hechas con hule."
+    }
+  ],
+  "prendasKimi": [
+    {
+      "id": "5388",
+      "title": "Sueter Mecedes F1 Kimi",
+      "precio": "$12.00",
+      "imagen": "https://www.inspira8.com/cdn/shop/files/Kimi_Antonelli_Mercedes_F1_Merch.jpg?v=1742267291",
+      "stock": 120,
+      "detalle": "Sueter hecho 100% algodon,tegido a mano,color negro con mangas blancas y tonos turqueza con blanco."
+    }
+  ],
+  "prendasRusell": [
+    {
+      "id": "a734",
+      "title": "Gorra Mercedes Amg F1 George Rusell",
+      "precio": "$15.00",
+      "imagen": "https://m.media-amazon.com/images/I/31SM6Rbyb4L._AC_SY350_.jpg",
+      "detalle": "Gorra 70% algodon, color negro y bordado blanco,simbolo mercedes y el numero 63 de Rusell",
+      "stock": 224
+    }
+  ],
+  "carritos": [
+    {
+      "id": "2e9b",
+      "items": [],
+      "lastUpdate": "2026-03-06T21:16:22.097Z"
+    },
+    {
+      "id": "admin-1",
+      "items": [],
+      "lastUpdate": "2026-03-07T20:59:52.581Z"
+    },
+    {
+      "id": "9c7e",
+      "items": [],
+      "lastUpdate": "2026-03-07T21:26:38.597Z"
+    },
+    {
+      "id": "7e06",
+      "items": [],
+      "lastUpdate": "2026-03-07T22:05:01.238Z"
+    }
+  ],
+  "compras": [
+    {
+      "id": "1772807140468",
+      "userId": "2e9b",
+      "userName": "Stephannie Suarez",
+      "userEmail": "ssuarezguido@gmail.com",
+      "items": [
+        {
+          "title": "Camisa Mercedes Petronas f1",
+          "precio": "$12.00",
+          "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdM9D-y23kwSU-uC4jNPgVpaAgUDtHMoLXdw&s",
+          "id": "35fc",
+          "quantity": 3
+        }
+      ],
+      "total": 36,
+      "date": "2026-03-06T14:25:40.468Z"
+    },
+    {
+      "id": "1772825160587",
+      "userId": "admin-1",
+      "userName": "Administrador",
+      "userEmail": "admin@quizz.com",
+      "items": [
+        {
+          "title": "Sueter Mecedes F1 Kimi",
+          "precio": "$12.00",
+          "imagen": "https://www.inspira8.com/cdn/shop/files/Kimi_Antonelli_Mercedes_F1_Merch.jpg?v=1742267291",
+          "id": "5388",
+          "quantity": 1
+        }
+      ],
+      "total": 12,
+      "date": "2026-03-06T19:26:00.587Z"
+    },
+    {
+      "id": "1772825948730",
+      "userId": "2e9b",
+      "userName": "Stephannie Suarez",
+      "userEmail": "ssuarezguido@gmail.com",
+      "items": [
+        {
+          "title": "Camisa Mercedes Petronas f1",
+          "precio": "$12.00",
+          "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdM9D-y23kwSU-uC4jNPgVpaAgUDtHMoLXdw&s",
+          "id": "35fc",
+          "quantity": 1
+        }
+      ],
+      "total": 12,
+      "date": "2026-03-06T19:39:08.730Z"
+    },
+    {
+      "id": "1772833661185",
+      "userId": "9c7e",
+      "userName": "salas",
+      "userEmail": "salas@gamil.com",
+      "items": [
+        {
+          "title": "Carro Mercedes AmgF1",
+          "precio": "$40.00",
+          "imagen": "https://walmartcr.vtexassets.com/arquivos/ids/1004546/vehiculo-formula-1-mercedes-racing-1-43-4893993380800.jpg?v=638949249778070000",
+          "id": "20f2",
+          "quantity": 1
+        }
+      ],
+      "total": 40,
+      "date": "2026-03-06T21:47:41.186Z"
     }
   ]
 }

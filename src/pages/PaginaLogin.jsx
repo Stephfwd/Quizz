@@ -1,19 +1,13 @@
-import React from 'react'
-
-import FormLogin from "../components/FormLogin"
-
+import React from 'react';
+import FormLogin from "../components/FormLogin";
+import '../styles/LoginPage.css';
 
 function PaginaLogin() {
   return (
-    <div>
-
-
-     <FormLogin/>
-
-
-
+    <div className="login-page-container">
+      <FormLogin />
     </div>
-  )
+  );
 }
 
-export default PaginaLogin
+export default PaginaLogin;

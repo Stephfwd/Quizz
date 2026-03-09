@@ -3,15 +3,15 @@ async function getUsuarios() {
     try {
 
         const respuestaServidor = await fetch("http://localhost:3000/usuarios")
-      
-        
-        const datosUsuarios= await respuestaServidor.json();
-   
-        
+
+
+        const datosUsuarios = await respuestaServidor.json();
+
+
         return datosUsuarios;
-        
+
     } catch (error) {
-        
+
         console.error("Error al obtener los usuarios", error);
     }
 
@@ -25,25 +25,25 @@ async function getUsuarios() {
 //POST USUARIOS AQUI S EVA A CREAR LA FUNCION PARA GUARDAR UN NUEVO USUARIO
 
 
-async function postUsuarios(usuarios){
+async function postUsuarios(usuarios) {
 
-       try {
+    try {
 
-        const respuesta = await fetch("http://localhost:3000/usuarios",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
+        const respuesta = await fetch("http://localhost:3000/usuarios", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify(usuarios)
+            body: JSON.stringify(usuarios)
 
         })
 
-        const datosUsuarios= await respuesta.json();
+        const datosUsuarios = await respuesta.json();
 
         return datosUsuarios;
-        
+
     } catch (error) {
-        
+
         console.error("Error al obtener los usuarios", error);
     }
 
@@ -57,25 +57,25 @@ async function postUsuarios(usuarios){
 //PUT
 
 
-async function patchUsuarios(usuarios,id){
+async function patchUsuarios(usuarios, id) {
 
-       try {
+    try {
 
-        const respuesta = await fetch("http://localhost:3000/usuarios/"+id,{
-            method:"PUT",
-            headers:{
-                "Content-Type":"application/json"
+        const respuesta = await fetch("http://localhost:3000/usuarios/" + id, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify(usuario)
+            body: JSON.stringify(usuarios)
 
         })
 
-        const datosUsuarios= await respuesta.json();
+        const datosUsuarios = await respuesta.json();
 
         return datosUsuarios;
-        
+
     } catch (error) {
-        
+
         console.error("Error al actualizar los cambios", error);
     }
 }
@@ -86,20 +86,20 @@ async function patchUsuarios(usuarios,id){
 
 
 
-async function deleteUsuarios(id){
+async function deleteUsuarios(id) {
 
-       try {
+    try {
 
-        const respuesta = await fetch("http://localhost:3000/usuarios/"+id,{
-            method:"DELETE",
+        const respuesta = await fetch("http://localhost:3000/usuarios/" + id, {
+            method: "DELETE",
         })
 
-        const datosUsuarios= await respuesta.json();
+        const datosUsuarios = await respuesta.json();
 
         return datosUsuarios;
-        
+
     } catch (error) {
-        
+
         console.error("Error al Eliminar el registro", error);
     }
 }
@@ -107,6 +107,6 @@ async function deleteUsuarios(id){
 
 
 
-export default {postUsuarios,getUsuarios,patchUsuarios,deleteUsuarios}
+export default { postUsuarios, getUsuarios, patchUsuarios, deleteUsuarios }
 
 

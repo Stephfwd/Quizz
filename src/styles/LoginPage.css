@@ -1,0 +1,9 @@
+.login-page-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: radial-gradient(circle at top right, rgba(0, 161, 155, 0.1), transparent),
+        radial-gradient(circle at bottom left, rgba(168, 168, 168, 0.05), transparent);
+}

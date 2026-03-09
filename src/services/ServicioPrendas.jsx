@@ -1,112 +1,60 @@
-async function getPrendas() {
+const BASE_URL = "http://localhost:3000";
 
+async function getPrendas(endpoint = "prendas") {
     try {
-
-        const respuestaServidor = await fetch("http://localhost:3000/prendas")
-      
-        
-        const datosPrendas= await respuestaServidor.json();
-   
-        
+        const respuestaServidor = await fetch(`${BASE_URL}/${endpoint}`);
+        const datosPrendas = await respuestaServidor.json();
         return datosPrendas;
-        
     } catch (error) {
-        
-        console.error("Error al obtener los prendas", error);
+        console.error(`Error al obtener los ${endpoint}`, error);
     }
-
-
 }
 
-
-
-
-
-//POST USUARIOS AQUI S EVA A CREAR LA FUNCION PARA GUARDAR UN NUEVO USUARIO
-
-
-async function postPrendas(prendas){
-
-       try {
-
-        const respuesta = await fetch("http://localhost:3000/prendas",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
+async function postPrendas(prendas, endpoint = "prendas") {
+    try {
+        const respuesta = await fetch(`${BASE_URL}/${endpoint}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify(prendas)
-
-        })
-
-        const datosPrenda= await respuesta.json();
-
+            body: JSON.stringify(prendas)
+        });
+        const datosPrenda = await respuesta.json();
         return datosPrenda;
-        
     } catch (error) {
-        
-        console.error("Error al obtener los prendas", error);
+        console.error(`Error al crear en ${endpoint}`, error);
     }
-
-
-
 }
 
-
-
-
-//PUT
-
-
-async function patchPrendas(prenda,id){
-
-       try {
-
-        const respuesta = await fetch("http://localhost:3000/prendas/"+id,{
-            method:"PUT",
-            headers:{
-                "Content-Type":"application/json"
+async function patchPrendas(prenda, id, endpoint = "prendas") {
+    try {
+        // We use PUT for full replacement or PATCH for partial, 
+        // the original code used PUT but called it patchPrendas.
+        // I'll keep PATCH as it's more idiomatic for "patch".
+        const respuesta = await fetch(`${BASE_URL}/${endpoint}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify(prenda)
-
-        })
-
-        const datosPrendas= await respuesta.json();
-
+            body: JSON.stringify(prenda)
+        });
+        const datosPrendas = await respuesta.json();
         return datosPrendas;
-        
     } catch (error) {
-        
-        console.error("Error al actualizar los cambios", error);
+        console.error(`Error al actualizar en ${endpoint}`, error);
     }
 }
 
-
-
-//DELETE
-
-
-
-async function deletePrendas(id){
-
-       try {
-
-        const respuesta = await fetch("http://localhost:3000/prendas/"+id,{
-            method:"DELETE",
-        })
-
-        const datosPrendas= await respuesta.json();
-
+async function deletePrendas(id, endpoint = "prendas") {
+    try {
+        const respuesta = await fetch(`${BASE_URL}/${endpoint}/${id}`, {
+            method: "DELETE",
+        });
+        const datosPrendas = await respuesta.json();
         return datosPrendas;
-        
     } catch (error) {
-        
-        console.error("Error al Eliminar el registro", error);
+        console.error(`Error al eliminar en ${endpoint}`, error);
     }
 }
 
-
-
-
-export default {getPrendas,postPrendas,patchPrendas,deletePrendas}
-
-
+export default { getPrendas, postPrendas, patchPrendas, deletePrendas }

@@ -4,7 +4,8 @@ import PanelAdministrativo from './PanelAdministrativo'
 import Swal from 'sweetalert2'
 import '../styles/Home.css'
 
-function Administracion() {
+function AdministracionAntonelli() {
+    const endpoint = "prendasKimi";
     const [prendas, setPrendas] = useState([])
     const [title, setTitle] = useState("")
     const [precio, setPrecio] = useState("")
@@ -18,7 +19,7 @@ function Administracion() {
     }, [])
 
     async function cargarPrendas() {
-        const data = await ServicioPrendas.getPrendas()
+        const data = await ServicioPrendas.getPrendas(endpoint)
         setPrendas(data)
     }
 
@@ -49,12 +50,23 @@ function Administracion() {
             return;
         }
 
+        const precioRegex = /[0-9]/;
+        if (!precioRegex.test(precioTrimmed)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Precio Inválido',
+                text: 'El precio debe contener al menos un número.',
+                confirmButtonColor: '#ef4444'
+            });
+            return;
+        }
+
         const imagenRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|avif|svg))(\?.*)?$/i;
         if (!imagenRegex.test(imagenTrimmed)) {
             Swal.fire({
                 icon: 'error',
                 title: 'URL Inválida',
-                text: 'La URL de la imagen no parece válida. Debe ser un enlace válido y terminar en una extensión de imagen común (.jpg, .png, etc.).',
+                text: 'La URL de la imagen no es válida. Debe ser un enlace de imagen (ej: .jpg, .png, .webp).',
                 confirmButtonColor: '#ef4444'
             });
             return;
@@ -62,19 +74,20 @@ function Administracion() {
 
         const finalPrecio = precioTrimmed.startsWith('$') ? precioTrimmed : `$${precioTrimmed}`;
 
+        const objPrenda = {
+            title: titleTrimmed,
+            precio: finalPrecio,
+            imagen: imagenTrimmed,
+            detalle: detalleTrimmed,
+            stock: stockNum
+        }
+
         if (editandoId) {
-            const objPrenda = {
-                title: titleTrimmed,
-                precio: finalPrecio,
-                imagen: imagenTrimmed,
-                detalle: detalleTrimmed,
-                stock: stockNum
-            }
-            await ServicioPrendas.patchPrendas(objPrenda, editandoId)
+            await ServicioPrendas.patchPrendas(objPrenda, editandoId, endpoint)
             setEditandoId(null)
             Swal.fire({
                 title: '¡Actualizado!',
-                text: 'La prenda ha sido actualizada con éxito.',
+                text: 'El artículo ha sido actualizado con éxito.',
                 icon: 'success',
                 toast: true,
                 position: 'top-end',
@@ -90,10 +103,10 @@ function Administracion() {
                 detalle: detalleTrimmed,
                 stock: stockNum
             }
-            await ServicioPrendas.postPrendas(nuevaPrenda)
+            await ServicioPrendas.postPrendas(nuevaPrenda, endpoint)
             Swal.fire({
                 title: '¡Guardado!',
-                text: 'La prenda ha sido agregada con éxito.',
+                text: 'El artículo ha sido agregado con éxito.',
                 icon: 'success',
                 toast: true,
                 position: 'top-end',
@@ -113,7 +126,7 @@ function Administracion() {
     async function eliminarPrenda(id) {
         Swal.fire({
             title: '¿Estás seguro?',
-            text: "No podrás revertir esta acción de eliminar la prenda.",
+            text: "No podrás revertir esta acción de eliminar la prenda de Kimi.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#ef4444',
@@ -122,7 +135,7 @@ function Administracion() {
             cancelButtonText: 'Cancelar'
         }).then(async (result) => {
             if (result.isConfirmed) {
-                await ServicioPrendas.deletePrendas(id)
+                await ServicioPrendas.deletePrendas(id, endpoint)
                 cargarPrendas()
                 Swal.fire({
                     title: '¡Eliminado!',
@@ -152,10 +165,10 @@ function Administracion() {
             <PanelAdministrativo />
 
             <div className="admin-content" style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-                <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Administración de Prendas Generales</h1>
+                <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Administración Kimi Antonelli</h1>
 
                 <div className="admin-form-container" style={{ background: 'var(--bg-card)', padding: '30px', borderRadius: '20px', border: '1px solid var(--glass-border)', marginBottom: '40px', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
-                    <h2 style={{ color: 'white', marginBottom: '20px' }}>{editandoId ? "Editar Prenda" : "Agregar Nueva Prenda"}</h2>
+                    <h2 style={{ color: 'white', marginBottom: '20px' }}>{editandoId ? "Editar Artículo" : "Agregar Nuevo Artículo"}</h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
                         <input
                             type="text"
@@ -208,7 +221,7 @@ function Administracion() {
                     </div>
                 </div>
 
-                <h2 style={{ color: 'white', marginBottom: '20px' }}>Catálogo Actual</h2>
+                <h2 style={{ color: 'white', marginBottom: '20px' }}>Catálogo Kimi</h2>
                 <div className="admin-catalog-grid">
                     {prendas.map(prenda => (
                         <div key={prenda.id} className="admin-catalog-card">
@@ -234,4 +247,4 @@ function Administracion() {
     )
 }
 
-export default Administracion
+export default AdministracionAntonelli
