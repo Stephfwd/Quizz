@@ -6,7 +6,7 @@ import ServicioPrendas from '../services/ServicioPrendas';
 import '../styles/Home.css';
 
 const KimiAntonelli = () => {
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const endpoint = "prendasKimi";
@@ -59,15 +59,15 @@ const KimiAntonelli = () => {
                 ) : (
                     <div className="products-grid">
                         {productos.length > 0 ? (
-                            productos.map((producto) => (
+                            productos.map((producto: any) => (
                                 <ProductCard
-                                    key={producto.id}
-                                    id={producto.id}
-                                    title={producto.title}
-                                    precio={producto.precio}
-                                    imagen={producto.imagen}
-                                    detalle={producto.detalle}
-                                    stock={producto.stock}
+                                    key={producto.id as any}
+                                    id={producto.id as any}
+                                    title={producto.title as any}
+                                    precio={producto.precio as any}
+                                    imagen={producto.imagen as any}
+                                    detalle={producto.detalle as any}
+                                    stock={producto.stock as any}
                                     endpoint={endpoint}
                                 />
                             ))

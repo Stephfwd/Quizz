@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import '../styles/Home.css'
 
 function Administracion() {
-    const [prendas, setPrendas] = useState([])
+    const [prendas, setPrendas] = useState<any[]>([])
     const [title, setTitle] = useState("")
     const [precio, setPrecio] = useState("")
     const [imagen, setImagen] = useState("")
@@ -110,7 +110,7 @@ function Administracion() {
         cargarPrendas()
     }
 
-    async function eliminarPrenda(id) {
+    async function eliminarPrenda(id: any) {
         Swal.fire({
             title: '¿Estás seguro?',
             text: "No podrás revertir esta acción de eliminar la prenda.",
@@ -137,7 +137,7 @@ function Administracion() {
         });
     }
 
-    function activarEdicion(prenda) {
+    function activarEdicion(prenda: any) {
         setEditandoId(prenda.id)
         setTitle(prenda.title)
         setPrecio(prenda.precio)

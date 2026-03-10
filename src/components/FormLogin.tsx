@@ -9,7 +9,7 @@ function FormLogin() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    async function iniciarSesion(e) {
+    async function iniciarSesion(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setError("");
 
@@ -31,7 +31,7 @@ function FormLogin() {
             const usuarios = await response.json();
 
             const usuarioEncontrado = usuarios.find(
-                (u) => u.correo === correoUsuario && u.contraseña === contraseñaUsuario
+                (u: any) => u.correo === correoUsuario && u.contraseña === contraseñaUsuario
             );
 
             if (usuarioEncontrado) {
@@ -60,7 +60,7 @@ function FormLogin() {
                 setError("Correo o contraseña incorrectos.");
             }
         } catch (err) {
-            console.error("Error al iniciar sesión:", err);
+            console.error("Error al iniciar sesión:", error);
             Swal.fire({
                 icon: 'error',
                 title: '¡Error de conexión!',

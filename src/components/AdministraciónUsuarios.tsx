@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import '../styles/Home.css';
 
 function AdministracionUsuarios() {
-  const [usuarios, setUsuarios] = useState([]);
+  const [usuarios, setUsuarios] = useState<any[]>([]);
   const [editandoId, setEditandoId] = useState(null);
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
@@ -21,7 +21,7 @@ function AdministracionUsuarios() {
     setUsuarios(data);
   }
 
-  async function eliminarUsuario(id, userRole) {
+  async function eliminarUsuario(id: any, userRole: any) {
     if (userRole === 'admin') {
       Swal.fire({
         icon: 'error',
@@ -58,7 +58,7 @@ function AdministracionUsuarios() {
     });
   }
 
-  function editarUsuario(usuario) {
+  function editarUsuario(usuario: any) {
     setEditandoId(usuario.id);
     setNombre(usuario.nombre);
     setCorreo(usuario.correo);
@@ -120,7 +120,7 @@ function AdministracionUsuarios() {
       role
     };
     if (contraseñaTrimmed) {
-      datosActualizados.contraseña = contraseñaTrimmed;
+      (datosActualizados as any).contraseña = contraseñaTrimmed;
     }
 
     await ServicioUsuarios.patchUsuarios(datosActualizados, editandoId);
@@ -207,10 +207,10 @@ function AdministracionUsuarios() {
             </thead>
             <tbody>
               {usuarios.length > 0 ? (
-                usuarios.map(user => (
-                  <tr key={user.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', transition: 'background 0.3s' }} className="user-row">
-                    <td style={{ padding: '15px 20px' }}>{user.nombre}</td>
-                    <td style={{ padding: '15px 20px' }}>{user.correo}</td>
+                usuarios.map((user: any) => (
+                  <tr key={user.id as any} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', transition: 'background 0.3s' }} className="user-row">
+                    <td style={{ padding: '15px 20px' }}>{user.nombre as any}</td>
+                    <td style={{ padding: '15px 20px' }}>{user.correo as any}</td>
                     <td style={{ padding: '15px 20px' }}>
                       <span style={{
                         background: user.role === 'admin' ? 'rgba(99, 102, 241, 0.2)' : 'rgba(148, 163, 184, 0.1)',
@@ -221,7 +221,7 @@ function AdministracionUsuarios() {
                         fontWeight: '600',
                         textTransform: 'capitalize'
                       }}>
-                        {user.role || 'user'}
+                        {user.role as any || 'user'}
                       </span>
                     </td>
                     <td style={{ padding: '15px 20px', textAlign: 'center' }}>
@@ -232,7 +232,7 @@ function AdministracionUsuarios() {
                         Editar
                       </button>
                       <button
-                        onClick={() => eliminarUsuario(user.id, user.role)}
+                        onClick={() => eliminarUsuario(user.id as any, user.role as any)}
                         style={{ background: '#ef4444', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px', cursor: 'pointer', fontWeight: '600' }}
                       >
                         Eliminar
@@ -242,7 +242,7 @@ function AdministracionUsuarios() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="4" style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>No hay usuarios registrados</td>
+                  <td colSpan={4} style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>No hay usuarios registrados</td>
                 </tr>
               )}
             </tbody>

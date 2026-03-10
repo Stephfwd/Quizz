@@ -6,12 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import ServicioPrendas from '../services/ServicioPrendas';
 
-const ProductCard = ({ title, precio, imagen, id, detalle, stock, endpoint }) => {
-    const { addToCart } = useCart();
+const ProductCard = ({ title, precio, imagen, id, detalle, stock, endpoint }: any) => {
+    const { addToCart }: any = useCart();
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentStock, setCurrentStock] = useState(stock ?? 0);
-
     const product = { title, precio, imagen, id, detalle };
 
     const handleAddToCart = async () => {
@@ -26,7 +25,7 @@ const ProductCard = ({ title, precio, imagen, id, detalle, stock, endpoint }) =>
                 cancelButtonText: 'Cancelar',
                 confirmButtonColor: '#3b82f6',
                 cancelButtonColor: '#9ca3af',
-            }).then((result) => {
+            }).then((result: any) => {
                 if (result.isConfirmed) {
                     navigate('/login');
                 }
@@ -43,7 +42,7 @@ const ProductCard = ({ title, precio, imagen, id, detalle, stock, endpoint }) =>
             const ep = endpoint || 'prendas';
             await ServicioPrendas.patchPrendas({ stock: newStock }, id, ep);
             setCurrentStock(newStock);
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error al actualizar stock:', error);
         }
 

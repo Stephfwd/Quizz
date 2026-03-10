@@ -7,7 +7,7 @@ const PanelAdministrativo = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const isActive = (path) => location.pathname === path;
+    const isActive = (path : string) => location.pathname === path;
 
     return (
         <div className="admin-panel-nav">

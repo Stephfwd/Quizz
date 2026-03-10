@@ -1,0 +1,6 @@
+﻿
+C:\Users\jguad\Desktop\Prueba quizz3\Quizz\src\components\ProductCard.tsx
+  0:0  warning  File ignored because no matching configuration was supplied
+
+Ô£û 1 problem (0 errors, 1 warning)
+

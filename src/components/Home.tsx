@@ -6,7 +6,7 @@ import '../styles/Home.css';
 import ServicioPrendas from '../services/ServicioPrendas';
 
 const Home = () => {
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -14,12 +14,12 @@ const Home = () => {
         try {
             const endpoints = ["prendas", "prendasKimi", "prendasRusell"];
             const responses = await Promise.all(
-                endpoints.map(endpoint => ServicioPrendas.getPrendas(endpoint))
+                endpoints.map((endpoint: any) => ServicioPrendas.getPrendas(endpoint))
             );
 
             // Combinar todos los arrays en uno solo, preservando el endpoint
-            const allProducts = responses.flatMap((items, idx) =>
-                (items || []).map(p => ({ ...p, _endpoint: endpoints[idx] }))
+            const allProducts = responses.flatMap((items: any, idx: number) =>
+                (items || []).map((p: any) => ({ ...p, _endpoint: endpoints[idx] }))
             );
 
             setProductos(allProducts);
@@ -73,7 +73,7 @@ const Home = () => {
                     </div>
                 ) : (
                     <div className="products-grid">
-                        {productos.map((producto) => (
+                        {productos.map((producto: any) => (
                             <ProductCard
                                 key={producto.id}
                                 id={producto.id}

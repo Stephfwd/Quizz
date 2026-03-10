@@ -4,9 +4,9 @@ import PanelAdministrativo from './PanelAdministrativo'
 import Swal from 'sweetalert2'
 import '../styles/Home.css'
 
-function AdministracionAntonelli() {
-    const endpoint = "prendasKimi";
-    const [prendas, setPrendas] = useState([])
+function AdministracionRusell() {
+    const endpoint = "prendasRusell";
+    const [prendas, setPrendas] = useState<any[]>([])
     const [title, setTitle] = useState("")
     const [precio, setPrecio] = useState("")
     const [imagen, setImagen] = useState("")
@@ -123,10 +123,10 @@ function AdministracionAntonelli() {
         cargarPrendas()
     }
 
-    async function eliminarPrenda(id) {
+    async function eliminarPrenda(id: any) {
         Swal.fire({
             title: '¿Estás seguro?',
-            text: "No podrás revertir esta acción de eliminar la prenda de Kimi.",
+            text: "No podrás revertir esta acción de eliminar la prenda de Rusell.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#ef4444',
@@ -150,7 +150,7 @@ function AdministracionAntonelli() {
         });
     }
 
-    function activarEdicion(prenda) {
+    function activarEdicion(prenda: any) {
         setEditandoId(prenda.id)
         setTitle(prenda.title)
         setPrecio(prenda.precio)
@@ -165,7 +165,7 @@ function AdministracionAntonelli() {
             <PanelAdministrativo />
 
             <div className="admin-content" style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-                <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Administración Kimi Antonelli</h1>
+                <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Administración George Rusell</h1>
 
                 <div className="admin-form-container" style={{ background: 'var(--bg-card)', padding: '30px', borderRadius: '20px', border: '1px solid var(--glass-border)', marginBottom: '40px', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
                     <h2 style={{ color: 'white', marginBottom: '20px' }}>{editandoId ? "Editar Artículo" : "Agregar Nuevo Artículo"}</h2>
@@ -221,9 +221,9 @@ function AdministracionAntonelli() {
                     </div>
                 </div>
 
-                <h2 style={{ color: 'white', marginBottom: '20px' }}>Catálogo Kimi</h2>
+                <h2 style={{ color: 'white', marginBottom: '20px' }}>Catálogo Rusell</h2>
                 <div className="admin-catalog-grid">
-                    {prendas.map(prenda => (
+                    {prendas.map((prenda: any) => (
                         <div key={prenda.id} className="admin-catalog-card">
                             <img src={prenda.imagen} alt={prenda.title} className="admin-clothing-image" />
                             <h3>{prenda.title}</h3>
@@ -247,4 +247,4 @@ function AdministracionAntonelli() {
     )
 }
 
-export default AdministracionAntonelli
+export default AdministracionRusell

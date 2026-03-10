@@ -6,7 +6,7 @@ import ServicioPrendas from '../services/ServicioPrendas';
 import '../styles/Home.css';
 
 const GeorgeRusell = () => {
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const endpoint = "prendasRusell";
@@ -59,7 +59,7 @@ const GeorgeRusell = () => {
                 ) : (
                     <div className="products-grid">
                         {productos.length > 0 ? (
-                            productos.map((producto) => (
+                            productos.map((producto: any) => (
                                 <ProductCard
                                     key={producto.id}
                                     id={producto.id}

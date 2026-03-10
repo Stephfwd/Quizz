@@ -4,9 +4,13 @@ import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
 import '../styles/FormRegistro.css'
 
+
+
+
+
 function FormRegistro() {
 
-    const [usuarios, setUsuarios] = useState([])
+    const [usuarios, setUsuarios] = useState<any[]>([])
 
     const [nombreUsuario, setNombreUsuario] = useState("")
     const [correoUsuario, setCorreoUsuario] = useState("")
@@ -87,7 +91,7 @@ function FormRegistro() {
         }
 
         // Verificar si el correo ya está registrado
-        const usuarioExistente = usuarios.find(u => u.correo.toLowerCase() === correoTrimmed.toLowerCase());
+        const usuarioExistente = usuarios.find((u: any) => u.correo.toLowerCase() === correoTrimmed.toLowerCase());
         if (usuarioExistente) {
             Swal.fire({
                 icon: 'warning',
@@ -131,7 +135,7 @@ function FormRegistro() {
 
 
 
-    async function editar(id) {
+    async function editar(id: any) {
 
         const objUsuario = {
 

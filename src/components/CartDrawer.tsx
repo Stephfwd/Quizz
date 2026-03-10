@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const CartDrawer = ({ isOpen, onClose }) => {
+const CartDrawer = ({ isOpen, onClose }: any) => {
     const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
     const navigate = useNavigate();
 
@@ -94,7 +94,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
                         </div>
                     ) : (
                         <div className="cart-items-list">
-                            {cartItems.map((item) => (
+                            {cartItems.map((item: any) => (
                                 <div key={item.id} className="cart-item">
                                     <img src={item.imagen} alt={item.title} className="cart-item-image" />
                                     <div className="cart-item-info">

@@ -20,6 +20,13 @@
       "correo": "ssuarezguido@gmail.com",
       "contraseña": "123456789",
       "role": "user"
+    },
+    {
+      "id": "37f1",
+      "nombre": "Charles Leclerc",
+      "correo": "Ccharles@gmail.com",
+      "contraseña": "12345678",
+      "role": "user"
     }
   ],
   "prendas": [
@@ -36,7 +43,7 @@
       "title": "Carro Mercedes AmgF1",
       "precio": "$40.00",
       "imagen": "https://walmartcr.vtexassets.com/arquivos/ids/1004546/vehiculo-formula-1-mercedes-racing-1-43-4893993380800.jpg?v=638949249778070000",
-      "stock": 95,
+      "stock": 94,
       "detalle": "Carro Mecedes F1 , hecho con pieza de plástico y llentas hechas con hule."
     }
   ],
@@ -46,7 +53,7 @@
       "title": "Sueter Mecedes F1 Kimi",
       "precio": "$12.00",
       "imagen": "https://www.inspira8.com/cdn/shop/files/Kimi_Antonelli_Mercedes_F1_Merch.jpg?v=1742267291",
-      "stock": 120,
+      "stock": 119,
       "detalle": "Sueter hecho 100% algodon,tegido a mano,color negro con mangas blancas y tonos turqueza con blanco."
     }
   ],
@@ -79,7 +86,12 @@
     {
       "id": "7e06",
       "items": [],
-      "lastUpdate": "2026-03-07T22:05:01.238Z"
+      "lastUpdate": "2026-03-09T14:45:04.138Z"
+    },
+    {
+      "id": "37f1",
+      "items": [],
+      "lastUpdate": "2026-03-10T20:48:45.086Z"
     }
   ],
   "compras": [
@@ -150,6 +162,60 @@
       ],
       "total": 40,
       "date": "2026-03-06T21:47:41.186Z"
+    },
+    {
+      "id": "1773067503565",
+      "userId": "7e06",
+      "userName": "Samy",
+      "userEmail": "ssuarezguido@gmail.com",
+      "items": [
+        {
+          "title": "Carro Mercedes AmgF1",
+          "precio": "$40.00",
+          "imagen": "https://walmartcr.vtexassets.com/arquivos/ids/1004546/vehiculo-formula-1-mercedes-racing-1-43-4893993380800.jpg?v=638949249778070000",
+          "id": "20f2",
+          "detalle": "Carro Mecedes F1 , hecho con pieza de plástico y llentas hechas con hule.",
+          "quantity": 1
+        }
+      ],
+      "total": 40,
+      "date": "2026-03-09T14:45:03.565Z"
+    },
+    {
+      "id": "1773067844257",
+      "userId": "37f1",
+      "userName": "Charles Leclerc",
+      "userEmail": "Ccharles@gmail.com",
+      "items": [
+        {
+          "title": "Sueter Mecedes F1 Kimi",
+          "precio": "$12.00",
+          "imagen": "https://www.inspira8.com/cdn/shop/files/Kimi_Antonelli_Mercedes_F1_Merch.jpg?v=1742267291",
+          "id": "5388",
+          "detalle": "Sueter hecho 100% algodon,tegido a mano,color negro con mangas blancas y tonos turqueza con blanco.",
+          "quantity": 1
+        }
+      ],
+      "total": 12,
+      "date": "2026-03-09T14:50:44.257Z"
+    },
+    {
+      "id": "1773175641200",
+      "userId": "37f1",
+      "userName": "Charles Leclerc",
+      "userEmail": "Ccharles@gmail.com",
+      "items": [
+        {
+          "title": "Carro Mercedes AmgF1",
+          "precio": "$40.00",
+          "imagen": "https://walmartcr.vtexassets.com/arquivos/ids/1004546/vehiculo-formula-1-mercedes-racing-1-43-4893993380800.jpg?v=638949249778070000",
+          "id": "20f2",
+          "detalle": "Carro Mecedes F1 , hecho con pieza de plástico y llentas hechas con hule.",
+          "quantity": 1
+        }
+      ],
+      "total": 40,
+      "date": "2026-03-10T20:47:21.201Z"
     }
   ]
 }

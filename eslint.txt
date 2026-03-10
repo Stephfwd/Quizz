@@ -1,0 +1,30 @@
+﻿
+C:\Users\jguad\Desktop\Prueba quizz3\Quizz\src\components\Administraci├│n.jsx
+  17:9  error  Error: Cannot access variable before it is declared
+
+`cargarPrendas` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  15 |
+  16 |     useEffect(() => {
+> 17 |         cargarPrendas()
+     |         ^^^^^^^^^^^^^ `cargarPrendas` accessed before it is declared
+  18 |     }, [])
+  19 |
+  20 |     async function cargarPrendas() {
+
+  18 |     }, [])
+  19 |
+> 20 |     async function cargarPrendas() {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 21 |         const data = await ServicioPrendas.getPrendas()
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |         setPrendas(data)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |     }
+     | ^^^^^^ `cargarPrendas` is declared here
+  24 |
+  25 |     async function guardarPrenda() {
+  26 |         const titleTrimmed = title.trim();  react-hooks/immutability
+
+Ô£û 1 problem (1 error, 0 warnings)
+

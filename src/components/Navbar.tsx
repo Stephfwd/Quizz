@@ -4,11 +4,11 @@ import '../styles/Navbar.css';
 import { useCart } from '../context/CartContext';
 import { MERCEDES_LOGO_BASE64 } from '../assets/mercedesLogo';
 
-const Navbar = ({ onCartClick }) => {
+const Navbar = ({ onCartClick }: { onCartClick: () => void }) => {
     const { getCartCount } = useCart();
     const count = getCartCount();
     const navigate = useNavigate();
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<any>(null);
 
     useEffect(() => {
         const checkUser = () => {

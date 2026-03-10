@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/ProductDetailModal.css';
 import { useCart } from '../context/CartContext';
 
-const ProductDetailModal = ({ product, isOpen, onClose }) => {
+const ProductDetailModal = ({ product, isOpen, onClose }: any) => {
     const { addToCart } = useCart();
 
     if (!isOpen || !product) return null;
